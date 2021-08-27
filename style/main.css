@@ -324,12 +324,22 @@ hr {
 .text-wrapper {
     height: 100%;
     display: table;
-    padding-left: 140px
+    padding-left: 40px;
+        
 }
 
 .text-wrapper > div {
     vertical-align: middle;
     display: table-cell
+}
+
+.text-wrapper img {
+    width: 250px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
 }
 
 .feature-thumb {
@@ -379,6 +389,7 @@ hr {
 
 .services-item {
     background: #fff;
+    height: 450px;
     margin: 15px 0;
     padding: 30px;
     border-radius: 4px;
@@ -393,6 +404,10 @@ hr {
 .services-item .icon i {
     font-size: 42px;
     color: #ffba00
+}
+
+.services-content p{
+    text-align: justify;
 }
 
 .services-item .services-content h3 {
@@ -474,13 +489,13 @@ hr {
 }
 
 .top-nav-collapse {
-    background: #fff;
+    background: #f3f3f3;
     z-index: 999999;
     top: 0 !important;
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .06);
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
-    background: #fff !important
+    background: #f3f3f3 !important
 }
 
 .top-nav-collapse .navbar-brand {
