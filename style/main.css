@@ -425,6 +425,10 @@ hr {
     color: #ffba00
 }
 
+.services-content ul{
+    text-align: justify;
+}
+
 .services-item:hover {
     box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .08)
 }
@@ -1535,7 +1539,7 @@ hr {
 }
 
 .testimonial-item .img-thumb img {
-    border-radius: 50%;
+    border-radius: 20px;
     display: inline-block;
     width: inherit;
     padding: 7px
@@ -1920,4 +1924,8 @@ textarea {
 
 .copyright p a:hover {
     color: #ffba00
+}
+
+.site-heading p span{
+    font-weight: bold;
 }
