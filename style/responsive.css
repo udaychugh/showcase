@@ -25,7 +25,10 @@
         font-size: 30px;
         margin-bottom: 30px
     }
-
+    
+    .showingthingsasflex{
+        justify-content: center;
+    }       
     .services-item .services-content h3 a {
         font-size: 14px
     }
