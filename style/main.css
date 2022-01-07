@@ -68,6 +68,18 @@ a:not([href]):not([tabindex]) {
     color: #fff
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 .section-header {
     margin-bottom: 30px
 }
@@ -95,7 +107,7 @@ a:not([href]):not([tabindex]) {
     background: #f9f9f9
 }
 
-.showing-bg{
+.showing-bg {
     background-image: url(../images/stock4.gif);
     height: 300px;
     width: 100%;
@@ -104,14 +116,15 @@ a:not([href]):not([tabindex]) {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .dark-overlay {
-  background-color: rgba(0, 0, 0, 0.7);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .overlay {
@@ -178,6 +191,11 @@ a:not([href]):not([tabindex]) {
     color: #fff;
     border-color: #ffba00;
     background-color: #ffba00
+}
+
+.lottie-player {
+    width: 350px;
+    height: 350px;
 }
 
 .btn-lg {
@@ -344,7 +362,7 @@ hr {
     height: 100%;
     display: table;
     padding-left: 40px;
-        
+
 }
 
 .text-wrapper > div {
@@ -408,7 +426,7 @@ hr {
 
 .services-item {
     background: #fff;
-    height: 450px;
+    height: 500px;
     margin: 15px 0;
     padding: 30px;
     border: 4px solid transparent;
@@ -421,12 +439,16 @@ hr {
     -o-transition: all .3s ease-in-out 0s
 }
 
-.services-item:hover{
+.services-item:hover {
     cursor: pointer;
     border-bottom-color: #579f2c;
 }
 
-.services-item:hover .icon i{
+.services-item:hover .icon i {
+    color: #579f2c;
+}
+
+.services-item:hover .services-content h3 a {
     color: #579f2c;
 }
 
@@ -436,7 +458,7 @@ hr {
     transition: all .3s ease-in-out 0s;
 }
 
-.services-content p{
+.services-content p {
     text-align: justify;
 }
 
@@ -455,12 +477,25 @@ hr {
     color: #ffba00
 }
 
-.services-content ul{
+.services-content ul {
     text-align: justify;
+}
+
+.services-content ul li {
+    list-style-image: url(../images/list-item.png);
+
 }
 
 .services-item:hover {
     box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .08)
+}
+
+.favicon-bg {
+    background: url(../images/favicon.png);
+    background-origin: content-box;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #service {
@@ -708,12 +743,12 @@ hr {
     animation-name: fadeInUpMenu
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
-.showingthingsasflex{
-    display: flex;    
+.showingthingsasflex {
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
@@ -730,11 +765,11 @@ hr {
     background-position: center;
 }
 
-#particles-js{
+#particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-	top: 0;
+    top: 0;
 }
 
 #hero-area .contents {
@@ -1605,19 +1640,19 @@ hr {
     width: 100%
 }
 
-.testimonial-item .info h2 {
-    font-size: 16px;
+.testimonial-item .img-thumb h2 {
+    font-size: 22px;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 30px;
     margin: 0
 }
 
-.testimonial-item .info h2 a {
+.testimonial-item .img-thumb h2 a {
     color: #fff
 }
 
-.testimonial-item .info h3 {
+.testimonial-item .img-thumb h3 {
     margin: 0;
     clear: both;
     font-size: 14px;
@@ -1959,9 +1994,7 @@ textarea {
     padding: 15px
 }
 
-.copyright .footer-logo img {
-    
-}
+.copyright .footer-logo img {}
 
 .copyright p {
     line-height: 60px;
@@ -1978,6 +2011,6 @@ textarea {
     color: #ffba00
 }
 
-.site-heading p span{
+.site-heading p span {
     font-weight: bold;
 }

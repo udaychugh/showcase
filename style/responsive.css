@@ -260,3 +260,36 @@
         height: auto;
     }
 }
+
+@media(max-width:484px){
+    .text-wrapper img {
+        width: 350px;
+    }
+}
+
+@media(max-width:494px){
+    .text-wrapper img {
+        width: 300px;
+    }
+}
+
+@media(max-width:335px){
+    .text-wrapper img {
+        width: 280px;
+    }
+    .lottie-player{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media(max-width:300px){
+    .text-wrapper img {
+        width: 250px;
+    }
+    
+    .lottie-player{
+        width: 250px;
+        height: 250px;
+    }
+}
