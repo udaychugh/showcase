@@ -10,7 +10,7 @@
             } else {
                 $('.scrolling-navbar').removeClass('top-nav-collapse');
                 $('.scrolling-navbar').addClass('hidden');
-                
+
             }
         });
 
@@ -51,6 +51,9 @@
             dots: true,
             center: true,
             margin: 15,
+            mouseDrag: false,
+            touchDrag: true,
+
             slideSpeed: 1000,
             stopOnHover: false,
             autoplay: true,
