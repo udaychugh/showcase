@@ -53,12 +53,11 @@
             margin: 15,
             mouseDrag: false,
             touchDrag: true,
-
             slideSpeed: 1000,
             stopOnHover: false,
             autoplay: true,
             autoplaySpeed: 1000,
-            autoplayTimeout: 5000,
+            autoplayTimeout: 10000,
             responsiveClass: true,
             autoplayHoverPause: false,
             responsiveRefreshRate: true,
