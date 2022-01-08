@@ -486,6 +486,12 @@ hr {
 
 }
 
+.skill-content ul li {
+    list-style-image: url(../images/list-item.png);
+
+}
+
+
 .services-item:hover {
     box-shadow: 0 20px 30px 0 rgba(0, 0, 0, .08)
 }

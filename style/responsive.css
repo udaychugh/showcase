@@ -259,6 +259,16 @@
     .services-item{
         height: auto;
     }
+    
+    .favicon-bg{
+        display: none;
+    }
+}
+
+@media(max-width:567px){
+    .skill-content ul li{
+        margin-left: 20px;
+    }
 }
 
 @media(max-width:484px){
