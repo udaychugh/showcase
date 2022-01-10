@@ -418,7 +418,7 @@
             <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
                 <div class="col-md-6 col-lg-6 col-sm-12">
                     <div class="contact-block">
-                        <form id="contactForm" action="https://submit-form.com/GeYxTdIE" method="POST">
+                        <form id="contactForm" action="https://submit-form.com/GeYxTdIE">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -456,9 +456,11 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button">
-                                        <button class="btn btn-common" id="form-submit" type="submit">Send Message</button>
+                                        <button class="btn btn-common" onclick="swal('Success', 'You Submitted the form!', 'success');" id="form-submit" type="submit">Send Message</button>
                                         <div id="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
+                                        <input type="hidden" name="_redirect" value="https://lgpartners.com.au/#contact" />
+                                        <input type="hidden" name="_append" value="false" />
                                     </div>
 
                                 </div>
@@ -539,7 +541,7 @@
     <script src="script/jquery.nav.js"></script>
     <script src="script/scrolling-nav.js"></script>
 
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="script/jquery.easing.min.js"></script>
     <script src="script/jquery.counterup.min.js"></script>
@@ -559,5 +561,8 @@
                 'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'
             });
         });
+
     </script>
-</body></html>
+</body>
+
+</html>
