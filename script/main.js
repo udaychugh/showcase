@@ -37,10 +37,26 @@
             closedSymbol: '<i class="lni-chevron-right"></i>',
             openedSymbol: '<i class="lni-chevron-down"></i>',
         });
-        var wow = new WOW({
-            mobile: false
+        // Modern Intersection Observer replacing WOW.js
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const delay = el.getAttribute('data-wow-delay') || '0s';
+                    el.style.animationDelay = delay;
+                    el.classList.add('custom-animated');
+                    observer.unobserve(el);
+                }
+            });
+        }, observerOptions);
+        $('.wow').each(function() {
+            observer.observe(this);
         });
-        wow.init();
         $('.counter').counterUp({
             time: 1000
         });

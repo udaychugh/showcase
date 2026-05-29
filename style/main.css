@@ -307,55 +307,36 @@ a.back-to-top:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #fff;
-    z-index: 9999999
+    background-color: #1a2410;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.loader {
-    top: 50%;
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    position: relative;
-    margin: 0 auto
+.shimmer-loader {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(
+        90deg, 
+        rgba(255, 255, 255, 0.05) 0%, 
+        #ffba00 50%, 
+        rgba(255, 255, 255, 0.05) 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 2s infinite linear;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
-#loader-1:before,
-#loader-1:after {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 100%;
-    height: 100%;
-    border-radius: 100%;
-    border: 7px solid transparent;
-    border-top-color: #ffba00
-}
-
-#loader-1:before {
-    z-index: 100;
-    animation: spin 1s infinite
-}
-
-#loader-1:after {
-    border: 7px solid #f2f2f2
-}
-
-@keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        -ms-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg)
-    }
-
-    100% {
-        -webkit-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg)
-    }
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
 }
 
 .section-padding {
@@ -3010,4 +2991,53 @@ textarea {
     .timeline-content h3 {
         font-size: 16px;
     }
+}
+
+/* Modern Scroll Reveal Animations (Replacing WOW & animate.css) */
+.wow {
+    opacity: 0;
+}
+
+.wow.custom-animated {
+    opacity: 1;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wow.fadeInUp.custom-animated { animation-name: customFadeInUp; }
+.wow.fadeInDown.custom-animated { animation-name: customFadeInDown; }
+.wow.fadeInLeft.custom-animated { animation-name: customFadeInLeft; }
+.wow.fadeInRight.custom-animated { animation-name: customFadeInRight; }
+.wow.zoomIn.custom-animated { animation-name: customZoomIn; }
+.wow.fadeIn.custom-animated { animation-name: customFadeIn; }
+
+@keyframes customFadeInUp {
+    0% { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(4px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes customFadeInDown {
+    0% { opacity: 0; transform: translateY(-30px) scale(0.98); filter: blur(4px); }
+    100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes customFadeInLeft {
+    0% { opacity: 0; transform: translateX(-30px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes customFadeInRight {
+    0% { opacity: 0; transform: translateX(30px); filter: blur(4px); }
+    100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+
+@keyframes customZoomIn {
+    0% { opacity: 0; transform: scale(0.9); filter: blur(4px); }
+    100% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+@keyframes customFadeIn {
+    0% { opacity: 0; filter: blur(4px); }
+    100% { opacity: 1; filter: blur(0); }
 }
