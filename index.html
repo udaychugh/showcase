@@ -374,9 +374,9 @@
             off-site service delivery.
           </p>
         </div>
-        <div class="row">
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.3s">
+        <div class="row d-flex flex-wrap">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
+            <div class="services-item wow fadeInRight w-100" data-wow-delay="0.3s">
               <div class="icon">
                 <i class="fas fa-calculator"></i>
               </div>
@@ -395,8 +395,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.6s">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
+            <div class="services-item wow fadeInRight w-100" data-wow-delay="0.6s">
               <div class="icon">
                 <i class="fas fa-dollar-sign"></i>
               </div>
@@ -413,8 +413,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="0.9s">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
+            <div class="services-item wow fadeInRight w-100" data-wow-delay="0.9s">
               <div class="icon">
                 <i class="fab fa-ubuntu"></i>
               </div>
@@ -446,8 +446,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="1.2s">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
+            <div class="services-item wow fadeInRight w-100" data-wow-delay="1.2s">
               <div class="icon">
                 <i class="fas fa-tasks"></i>
               </div>
@@ -466,8 +466,8 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 col-xs-12">
-            <div class="services-item wow fadeInRight" data-wow-delay="1.5s">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
+            <div class="services-item wow fadeInRight w-100" data-wow-delay="1.5s">
               <div class="icon">
                 <i class="fas fa-file"></i>
               </div>
@@ -486,15 +486,21 @@
             </div>
           </div>
 
-          <div class="col-md-6 col-lg-4 col-xs-12">
+          <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
-              class="services-item favicon-bg wow fadeInRight"
+              class="services-item wow fadeInRight w-100"
               data-wow-delay="1.8s"
             >
-              <div class="icon"></div>
+              <div class="icon">
+                <i class="fas fa-envelope-open-text"></i>
+              </div>
               <div class="services-content">
-                <h3><a href="#"></a></h3>
-                <ul></ul>
+                <h3><a href="#">Ready to Transform </a></h3>
+                <h3 style="margin-top: -30px">
+                  <a href="#">your Business?</a>
+                </h3>
+                <p>Contact us today to discuss how our financial expertise can support your organisation's goals.</p>
+                <a href="#contact" class="btn btn-common" style="margin-top: 20px;">Contact Us</a>
               </div>
             </div>
           </div>
@@ -548,26 +554,88 @@
             class="col-lg-6 col-md-12 col-xs-12 wow fadeInLeft"
             data-wow-delay="0.3s"
           >
-            <img
-              class="img-fluid"
-              src="images/stock3.jpg"
-              width="300px"
-              alt=""
-            />
+            <style>
+              .skill-gallery {
+                display: flex;
+                gap: 20px;
+                margin-top: 20px;
+              }
+              .skill-gallery img {
+                border-radius: 12px;
+                object-fit: cover;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                transition: transform 0.3s ease;
+              }
+              .skill-gallery img:hover {
+                transform: translateY(-5px);
+              }
+              
+              /* Large screens: vertical layout */
+              @media (min-width: 992px) {
+                .skill-gallery {
+                  flex-direction: column;
+                  height: 100%;
+                }
+                .skill-gallery img {
+                  width: 100%;
+                  height: 300px; /* fixed height for consistent vertical gallery */
+                }
+              }
+              
+              /* Mobile/Tablet screens: horizontal scrollable layout */
+              @media (max-width: 991px) {
+                .skill-gallery {
+                  flex-direction: row;
+                  overflow-x: auto;
+                  padding-bottom: 15px;
+                  /* hide scrollbar for better aesthetics */
+                  -ms-overflow-style: none;  
+                  scrollbar-width: none;  
+                }
+                .skill-gallery::-webkit-scrollbar { 
+                  display: none; 
+                }
+                .skill-gallery img {
+                  height: 250px;
+                  width: 300px;
+                  flex-shrink: 0;
+                }
+              }
+            </style>
+            <div class="skill-gallery">
+              <img
+                src="images/premium-clients.jpg"
+                alt="Premium Corporate Finance Consulting"
+              />
+              <img
+                src="images/stock2.jpg"
+                alt="Financial Analysis and Strategy"
+              />
+              <img
+                src="images/stock3.jpg"
+                alt="Professional Accounting Services"
+              />
+            </div>
           </div>
           <div
             class="col-lg-6 col-md-12 col-xs-12 info wow fadeInRight"
             data-wow-delay="0.3s"
           >
             <div class="site-heading skill-content">
-              <h2 class="section-title">Our Clients</h2>
-              <ul>
-                <li>Local Government Councils</li>
-                <li>Aboriginal and Indigenous entities</li>
-                <li>Charities and Not-for-profit entities</li>
-                <li>Education, TAFE and Registered Training Organisations</li>
-                <li>Age care providers and Supported living houses</li>
+              <h2 class="section-title">Our Clients & Expertise</h2>
+              
+              <h4 class="mt-4 mb-3" style="font-weight: 600; font-size: 18px; color: #1a2410;">Who We Serve</h4>
+              <div class="client-badges">
+                  <span class="client-badge">Local Government Councils</span>
+                  <span class="client-badge">Aboriginal & Indigenous entities</span>
+                  <span class="client-badge">Charities & Not-for-profits</span>
+                  <span class="client-badge">Education & TAFE (RTOs)</span>
+                  <span class="client-badge">Age care providers</span>
+                  <span class="client-badge">Supported living houses</span>
+              </div>
 
+              <h4 class="mt-5 mb-3" style="font-weight: 600; font-size: 18px; color: #1a2410;">Our Qualifications & Systems</h4>
+              <ul class="premium-list">
                 <li>
                   Setup and configuration of LG Solutions portal, including
                   financial statements, general ledger mapping, LTFP, employee
@@ -582,7 +650,7 @@
                   reporting
                 </li>
                 <li>
-                  Reporting to Australina Charities and Not-for-Profit
+                  Reporting to Australian Charities and Not-for-Profit
                   Commission
                 </li>
                 <li>
@@ -590,51 +658,38 @@
                   (TPAR) to the ATO
                 </li>
 
-                <li style="color: #333333">
-                  <span style="color: #ffbf00">Qualified CPA</span> and<span
-                    style="color: #ffbf00"
-                  >
-                    Fellow </span
-                  >member of CPA Australia
+                <li>
+                  <span class="skill-highlight">Qualified CPA</span> and
+                  <span class="skill-highlight">Fellow</span> member of CPA Australia
                 </li>
-                <li style="color: #333333">
-                  Selected<span style="color: #ffbf00">
-                    Young business leader</span
-                  >
-                  by CPA Australia
+                <li>
+                  Selected <span class="skill-highlight">Young business leader</span> by CPA Australia
                 </li>
-                <li style="color: #333333">
-                  Experience working as<span style="color: #ffbf00">
-                    CFO, Finance Manager, Financial Controller</span
-                  >
-                  and
-                  <span style="color: #ffbf00">Financial Consultant</span> in
+                <li>
+                  Experience working as <span class="skill-highlight">CFO, Finance Manager, Financial Controller</span> and
+                  <span class="skill-highlight">Financial Consultant</span> in
                   Local Government Sector in NSW, WA, NT, VIC and QLD
                 </li>
-                <li style="color: #333333">
-                  Experience working in<span style="color: #ffbf00">
-                    Civica Authority, BIS, Practical plus, Synergy soft,
-                    Tech-one, Microsoft Dynamics, Assetic</span
-                  >
+                <li>
+                  Experience working in <span class="skill-highlight">Civica Authority, BIS, Practical plus, Synergy soft,
+                    Tech-one, Microsoft Dynamics, Assetic</span>
                   and many industry specific financial systems
                 </li>
-                <li style="color: #333333">
-                  Designed<span style="color: #ffbf00"> SQL reports</span> for
+                <li>
+                  Designed <span class="skill-highlight">SQL reports</span> for
                   Civica Authority system- Trial Balance, Transaction listing,
                   Monthly performance report, Investment report, Work order
                   report, Borrowing’s report, GL balance report and many more
                 </li>
-                <li style="color: #333333">
+                <li>
                   Year end and Audit tasks -
-                  <span style="color: #ffbf00">
+                  <span class="skill-highlight">
                     implemented new accounting standards for Leasing, Grants
                     revenue, AASB 15, 1058 and 1059
                   </span>
                 </li>
-                <li style="color: #333333">
-                  Knowledge of<span style="color: #ffbf00">
-                    LG solution portal</span
-                  >
+                <li>
+                  Knowledge of <span class="skill-highlight">LG solution portal</span>
                   for financial statement, LTFP, Fee and charges and Employee
                   Leave provisions
                 </li>
@@ -666,76 +721,67 @@
       </div>
     </div>
 
-    <section id="feature" class="testimonial section-padding">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
-            <div
-              id="testimonials"
-              class="owl-carousel wow fadeInUp"
-              data-wow-delay="1.2s"
-            >
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <h2><a href="#">Who we are</a></h2>
-                    <img src="images/10plus.jfif" height="120px" alt="" />
-                  </div>
-                  <div class="info"></div>
-                  <div class="content">
-                    <p class="description">
-                      With over 14 years’ experience working across Australia
-                      and New Zealand, LG Community Partners has developed a
-                      strong reputation for credibility and results. We provide
-                      deep expertise across both strategic and operational
-                      finance and accounting functions. As a values-driven and
-                      collaborative team, we are committed to supporting our
-                      clients in delivering high-quality outcomes across all
-                      areas of their operations.
-                    </p>
-                  </div>
-                </div>
+    <section id="feature" class="who-we-are-section section-padding">
+      <div class="who-we-are-overlay"></div>
+      <div class="container position-relative z-index-1">
+        <div class="section-header text-center mb-5">
+          <h2 class="section-title text-white wow fadeInDown" data-wow-delay="0.2s">Who We Are</h2>
+        </div>
+        
+        <div class="row align-items-stretch">
+          
+          <!-- Column 1 -->
+          <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <div class="who-card wow fadeInUp w-100" data-wow-delay="0.3s">
+              <div class="who-icon">
+                <i class="fas fa-history"></i>
               </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <h2><a href="#">Who we are</a></h2>
-                    <img src="images/reputation.png" height="120px" alt="" />
-                  </div>
-                  <div class="info"></div>
-                  <div class="content">
-                    <p class="description">
-                      We are known for our strong problem-solving capability in
-                      complex and dynamic environments. A core part of our work
-                      involves partnering with our clients to design and
-                      implement strategies that strengthen operational and
-                      financial performance, ensuring the sustained delivery of
-                      services to their communities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="img-thumb">
-                    <h2><a href="#">Who we are</a></h2>
-                    <img src="images/consulting.jfif" height="120px" alt="" />
-                  </div>
-                  <div class="info"></div>
-                  <div class="content">
-                    <p class="description">
-                      We are senior financial management consultants with
-                      extensive industry experience across corporate and
-                      financial functions, supported by strong expertise in
-                      financial strategy, business insight, and advanced
-                      analytical capability.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <p class="who-text">
+                With over 14 years’ experience working across Australia
+                and New Zealand, LG Community Partners has developed a
+                strong reputation for credibility and results. We provide
+                deep expertise across both strategic and operational
+                finance and accounting functions. As a values-driven and
+                collaborative team, we are committed to supporting our
+                clients in delivering high-quality outcomes across all
+                areas of their operations.
+              </p>
             </div>
           </div>
+
+          <!-- Column 2 -->
+          <div class="col-lg-4 col-md-6 mb-4 d-flex">
+            <div class="who-card wow fadeInUp w-100" data-wow-delay="0.5s">
+              <div class="who-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <p class="who-text">
+                We are known for our strong problem-solving capability in
+                complex and dynamic environments. A core part of our work
+                involves partnering with our clients to design and
+                implement strategies that strengthen operational and
+                financial performance, ensuring the sustained delivery of
+                services to their communities.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 3 -->
+          <div class="col-lg-4 col-md-12 mb-4 d-flex">
+            <div class="who-card wow fadeInUp w-100" data-wow-delay="0.7s">
+              <div class="who-icon">
+                <i class="fas fa-user-tie"></i>
+              </div>
+              <p class="who-text">
+                We are senior financial management consultants with
+                extensive industry experience across corporate and
+                financial functions, supported by strong expertise in
+                financial strategy, business insight, and advanced
+                analytical capability.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
