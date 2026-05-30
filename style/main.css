@@ -697,12 +697,24 @@ hr {
 }
 
 .navbar {
+    --navbar-text-color: #585b60;
     background: rgba(255, 255, 255, 0.06) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
     box-shadow: 0 8px 40px rgba(0, 0, 0, 0.35) !important;
     padding: 0;
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-brand span,
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-toggler {
+    color: var(--navbar-text-color) !important;
+}
+
+.navbar .navbar-toggler i {
+    color: inherit;
 }
 
 .top-nav-collapse {
@@ -722,7 +734,7 @@ hr {
 }
 
 .top-nav-collapse .navbar-nav .nav-link {
-    color: #585b60 !important;
+    color: var(--navbar-text-color) !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important
 }
