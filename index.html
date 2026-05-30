@@ -364,10 +364,13 @@
               data-wow-delay="0.3s"
             >
               <div class="icon">
-                <i class="fas fa-clipboard-list"></i>
+                <i class="fas fa-chart-line hero-exp-icon"></i>
               </div>
               <div class="services-content">
-                <h3><a href="#">DAY TO DAY OPERATION AND REPORTING</a></h3>
+                <h3><a href="#">DAY TO DAY OPERATIONS</a></h3>
+                <h3 style="margin-top: -30px">
+                  <a href="#">AND REPORTING</a>
+                </h3>
                 <ul>
                   <li>Bookkeeping and Bank Reconciliation</li>
                   <li>Accounts Payable and Receivables management</li>
@@ -624,12 +627,8 @@
                 alt="Premium Corporate Finance Consulting"
               />
               <img
-                src="images/stock2.jpg"
+                src="images/premium-clients-2.png"
                 alt="Financial Analysis and Strategy"
-              />
-              <img
-                src="images/stock3.jpg"
-                alt="Professional Accounting Services"
               />
             </div>
           </div>
@@ -664,27 +663,6 @@
                 Our Qualifications & Systems
               </h4>
               <ul class="premium-list">
-                <li>
-                  Setup and configuration of LG Solutions portal, including
-                  financial statements, general ledger mapping, LTFP, employee
-                  leave provisions, and fees and charges
-                </li>
-                <li>
-                  Grants management and acquittals, including tracking,
-                  reporting, and compliance support
-                </li>
-                <li>
-                  Office of the Registrar of Indigenous Corporations (ORIC)
-                  reporting
-                </li>
-                <li>
-                  Reporting to Australian Charities and Not-for-Profit
-                  Commission
-                </li>
-                <li>
-                  Preparation and lodgement of Taxable Payments Annual Report
-                  (TPAR) to the ATO
-                </li>
 
                 <li>
                   <span class="skill-highlight">Qualified CPA</span> and
@@ -831,7 +809,7 @@
         <div class="row contact-form-area wow fadeInUp" data-wow-delay="0.4s">
           <div class="col-md-6 col-lg-6 col-sm-12">
             <div class="contact-block">
-              <form id="contactForm" action="https://submit-form.com/GeYxTdIE">
+              <form id="contactForm" action="https://submit-form.com/GeYxTdIE" method="post">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -919,9 +897,6 @@
                     <div class="submit-button">
                       <button
                         class="btn btn-common"
-                        onclick="
-                          swal('Success', 'You Submitted the form!', 'success')
-                        "
                         id="form-submit"
                         type="submit"
                       >
@@ -929,16 +904,11 @@
                       </button>
                       <div id="msgSubmit" class="h3 text-center hidden"></div>
                       <div class="clearfix"></div>
-                      <input
-                        type="hidden"
-                        name="_redirect"
-                        value="https://lgpartners.com.au/#contact"
-                      />
-                      <input type="hidden" name="_append" value="false" />
                     </div>
                   </div>
                 </div>
               </form>
+
             </div>
           </div>
           <div class="col-md-6 col-lg-6 col-sm-12">
@@ -1141,6 +1111,73 @@
           });
         });
       });
+    </script>
+    <script>
+      (function () {
+        var contactForm = document.getElementById('contactForm');
+        var msgSubmit = document.getElementById('msgSubmit');
+        var submitButton = document.getElementById('form-submit');
+
+        if (!contactForm) return;
+
+        var GOOGLE_FORM_URL =
+          'https://docs.google.com/forms/d/e/1FAIpQLSedSsxOofu6Qh2I6X_2L28vYaq9HSzoobl0OqHDujPREXJ6PQ/formResponse';
+        // Field mappings taken from FB_PUBLIC_LOAD_DATA_
+        var FIELD_NAME = 'entry.936447046';
+        var FIELD_EMAIL = 'entry.2104727604';
+        var FIELD_PHONE = 'entry.1008244188';
+        var FIELD_COMPANY = 'entry.1276001075';
+        var FIELD_SUBJECT = 'entry.471801387';
+        var FIELD_MESSAGE = 'entry.1062873424';
+
+        function setMessage(text, isSuccess) {
+          if (!msgSubmit) return;
+          msgSubmit.classList.remove('hidden');
+          msgSubmit.classList.toggle('text-success', isSuccess);
+          msgSubmit.classList.toggle('text-danger', !isSuccess);
+          msgSubmit.textContent = text;
+        }
+
+        contactForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+          }
+
+          var formData = new FormData(contactForm);
+          var payload = new FormData();
+
+          // Map and append each visible form field to the Google Form entry keys
+          payload.append(FIELD_NAME, formData.get('name') || '');
+          payload.append(FIELD_EMAIL, formData.get('email') || '');
+          payload.append(FIELD_PHONE, formData.get('phone') || '');
+          payload.append(FIELD_COMPANY, formData.get('CompanyName') || '');
+          payload.append(FIELD_SUBJECT, formData.get('subject') || '');
+          payload.append(FIELD_MESSAGE, formData.get('message') || '');
+
+          fetch(GOOGLE_FORM_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: payload,
+          })
+            .then(function () {
+              setMessage('Thanks! Your message has been sent.', true);
+              contactForm.reset();
+            })
+            .catch(function (error) {
+              console.error('Submission failed', error);
+              setMessage('Submission failed. Please try again.', false);
+            })
+            .finally(function () {
+              if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+              }
+            });
+        });
+      })();
     </script>
     <script>
       window.dataLayer = window.dataLayer || [];
