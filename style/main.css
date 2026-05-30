@@ -437,7 +437,7 @@ hr {
 
 .services-item {
     background: #fff;
-    height: 100%;
+    /* allow natural height so cards vary by content */
     display: flex;
     flex-direction: column;
     margin: 15px 0;
@@ -460,12 +460,59 @@ hr {
     transform: translateY(-4px);
 }
 
+/* Staggered layout for desktop: apply vertical offsets to create a stepped grid */
+@media (min-width: 992px) {
+    /* Slight offset for the 2nd column in each row of three */
+    .row.d-flex.flex-wrap > .col-lg-4:nth-child(3n+2) .services-item {
+        transform: translateY(24px);
+    }
+
+    /* Larger offset for the 3rd column in each row of three */
+    .row.d-flex.flex-wrap > .col-lg-4:nth-child(3n+3) .services-item {
+        transform: translateY(48px);
+    }
+
+    /* Keep hover transform additive by resetting transition offset on hover */
+    .row.d-flex.flex-wrap > .col-lg-4 .services-item {
+        transition: transform .35s ease, box-shadow .35s ease, border-bottom-color .35s ease;
+    }
+
+    .row.d-flex.flex-wrap > .col-lg-4 .services-item:hover {
+        transform: translateY(0) translateY(-4px);
+    }
+}
+
 .services-item:hover .icon i {
     color: #579f2c;
 }
 
 .services-item:hover .services-content h3 a {
     color: #3a7a18;
+}
+
+/* Highlight animation used when user clicks a hero expertise item */
+@keyframes highlightPulse {
+    0% {
+        box-shadow: 0 0 0 rgba(255,186,0,0);
+        background: rgba(255,255,255,1);
+        border-color: rgba(255,186,0,0.15);
+    }
+    10% {
+        background: rgba(255,250,220,0.95);
+        border-color: rgba(255,186,0,0.35);
+    }
+    50% {
+        box-shadow: 0 10px 40px rgba(255,186,0,0.35);
+    }
+    100% {
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        background: #fff;
+        border-color: rgba(0,0,0,0.05);
+    }
+}
+
+.service-highlight {
+    animation: highlightPulse 2s ease forwards;
 }
 
 .services-item .icon i {

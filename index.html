@@ -192,27 +192,27 @@
                     </div>
                   </div>
                   <div class="hero-expertise-grid">
-                    <div class="hero-exp-item">
+                    <div class="hero-exp-item" data-target="#service-day-to-day">
+                      <i class="fas fa-chart-line hero-exp-icon"></i>
+                      <span>Day to Day Operations and Reporting</span>
+                    </div>
+                    <div class="hero-exp-item" data-target="#service-management-accounting">
                       <i class="fas fa-calculator hero-exp-icon"></i>
                       <span>Management Accounting</span>
                     </div>
-                    <div class="hero-exp-item">
+                    <div class="hero-exp-item" data-target="#service-financial-accounting">
                       <i class="fas fa-dollar-sign hero-exp-icon"></i>
                       <span>Financial Accounting &amp; Audit</span>
                     </div>
-                    <div class="hero-exp-item">
+                    <div class="hero-exp-item" data-target="#service-risk-management">
                       <i class="fas fa-tasks hero-exp-icon"></i>
                       <span>Internal Control &amp; Risk</span>
                     </div>
-                    <div class="hero-exp-item">
-                      <i class="fas fa-chart-line hero-exp-icon"></i>
-                      <span>Strategic Financial Planning</span>
-                    </div>
-                    <div class="hero-exp-item">
+                    <div class="hero-exp-item" data-target="#service-system-improvement">
                       <i class="fab fa-ubuntu hero-exp-icon"></i>
                       <span>System Improvement</span>
                     </div>
-                    <div class="hero-exp-item">
+                    <div class="hero-exp-item" data-target="#service-external-reporting">
                       <i class="fas fa-file-alt hero-exp-icon"></i>
                       <span>External Reporting</span>
                     </div>
@@ -359,6 +359,7 @@
         <div class="row d-flex flex-wrap">
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-day-to-day"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="0.3s"
             >
@@ -381,6 +382,7 @@
 
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-management-accounting"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="0.6s"
             >
@@ -399,6 +401,7 @@
 
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-financial-accounting"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="0.9s"
             >
@@ -420,6 +423,7 @@
 
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-system-improvement"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="1.2s"
             >
@@ -456,6 +460,7 @@
 
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-risk-management"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="1.5s"
             >
@@ -479,6 +484,7 @@
 
           <div class="col-md-6 col-lg-4 col-xs-12 d-flex mb-4">
             <div
+              id="service-external-reporting"
               class="services-item wow fadeInRight w-100"
               data-wow-delay="1.8s"
             >
@@ -960,13 +966,18 @@
                     <i class="far fa-envelope"></i>
                   </div>
                   <p>
-                    <a href="mailto:lgcommunitypartners@gmail.com"
-                      >lgcommunitypartners@gmail.com</a
+                    <a href="mailto:khushwant.kumar@lgpartners.co.au"
+                      >khushwant.kumar@lgpartners.co.au</a
                     >
                   </p>
                   <p>
-                    <a href="mailto:contact@lgpartners.com"
-                      >contact@lgpartners.com</a
+                    <a href="mailto:contact@lgpartners.co.au"
+                      >contact@lgpartners.co.au</a
+                    >
+                  </p>
+                  <p>
+                    <a href="mailto:lgcommunitypartners@gmail.com"
+                      >lgcommunitypartners@gmail.com</a
                     >
                   </p>
                 </div>
@@ -1094,6 +1105,41 @@
         // });
         document.getElementById("currentYear").textContent =
           new Date().getFullYear();
+      });
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var items = document.querySelectorAll('.hero-exp-item[data-target]');
+        items.forEach(function (it) {
+          it.style.cursor = 'pointer';
+
+          function activateTarget() {
+            var target = it.getAttribute('data-target');
+            if (!target) return;
+            var el = document.querySelector(target);
+            if (!el) return;
+            // smooth scroll to the center of the target card
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // wait briefly so scrolling is visible then animate highlight
+            setTimeout(function () {
+              el.classList.remove('service-highlight');
+              void el.offsetWidth; // force reflow
+              el.classList.add('service-highlight');
+              // remove after 2s
+              setTimeout(function () {
+                el.classList.remove('service-highlight');
+              }, 2000);
+            }, 450);
+          }
+
+          it.addEventListener('click', activateTarget);
+          it.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              activateTarget();
+            }
+          });
+        });
       });
     </script>
     <script>
