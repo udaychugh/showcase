@@ -2701,11 +2701,15 @@ textarea {
 }
 
 .timeline-item.left .timeline-content {
-    text-align: right;
+    text-align: left;
 }
 
 .timeline-item.right .timeline-content {
     text-align: left;
+}
+
+.timeline-content p {
+    text-align: justify;
 }
 
 /* Connecting lines */
@@ -2719,9 +2723,9 @@ textarea {
     background: rgba(255, 186, 0, 0.3);
 }
 
-.timeline-item.left .timeline-content::before {
+/* .timeline-item.left .timeline-content::before {
     right: -30px;
-}
+} */
 /* ===== WHO WE ARE SECTION ===== */
 .who-we-are-section {
     background-image: url('../images/who-we-are-bg.jpg');
@@ -2895,11 +2899,15 @@ textarea {
 }
 
 .timeline-item.left .timeline-content {
-    text-align: right;
+    text-align: left;
 }
 
 .timeline-item.right .timeline-content {
     text-align: left;
+}
+
+.timeline-content p {
+    text-align: justify;
 }
 
 /* Connecting lines */
