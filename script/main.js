@@ -220,6 +220,11 @@
             return;
         }
 
+        if (window.innerWidth <= 991) {
+            navbar.style.setProperty('--navbar-text-color', '#1a2410');
+            return;
+        }
+
         const sampleColor = getNavbarSampleColor(navbar);
         if (!sampleColor) {
             return;
@@ -245,13 +250,12 @@
         }
 
         function updateNavbarVisibility() {
-            if ($(window).scrollTop() > 100) {
+            if ($(window).scrollTop() > 100 || window.innerWidth <= 991) {
                 $('.scrolling-navbar').addClass('top-nav-collapse');
                 $('.scrolling-navbar').removeClass('hidden');
             } else {
                 $('.scrolling-navbar').removeClass('top-nav-collapse');
                 $('.scrolling-navbar').addClass('hidden');
-
             }
             scheduleNavbarTextColorUpdate();
         }
@@ -272,6 +276,9 @@
         $(window).on('resize', scheduleNavbarTextColorUpdate);
         $('.navbar-nav').onePageNav({
             currentClass: 'active'
+        });
+        $('.navbar-collapse').on('show.bs.collapse shown.bs.collapse hide.bs.collapse hidden.bs.collapse', function () {
+            scheduleNavbarTextColorUpdate();
         });
         $('.mobile-menu').slicknav({
             prependTo: '.navbar-header',

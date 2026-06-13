@@ -306,12 +306,21 @@
 
 /* ===== HERO RESPONSIVE ===== */
 @media(max-width: 991px) {
+    #hero-area {
+        height: auto !important;
+        min-height: 100vh;
+        overflow: hidden;
+    }
+    .hero-overlay {
+        height: auto !important;
+        min-height: 100vh;
+    }
     .hero-headline {
         font-size: 34px;
     }
     .hero-container {
-        padding-top: 80px;
-        padding-bottom: 40px;
+        padding-top: 100px;
+        padding-bottom: 60px;
     }
     .hero-stats {
         width: 100%;
@@ -323,9 +332,36 @@
     .hero-card-panel {
         max-width: 100%;
     }
+    /* Mobile/Tablet Collapsible Menu Styles */
+    .navbar-collapse {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .navbar-expand-md .navbar-nav .nav-link {
+        line-height: 36px;
+        padding: 8px 15px !important;
+    }
+    .navbar-toggler {
+        border: none !important;
+        background: transparent !important;
+        padding: 5px;
+        outline: none !important;
+    }
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
 }
 
 @media(max-width: 767px) {
+    #hero-area {
+        height: auto !important;
+        min-height: 100vh;
+    }
+    .hero-overlay {
+        height: auto !important;
+        min-height: 100vh;
+    }
     .hero-headline {
         font-size: 28px;
     }
@@ -333,6 +369,8 @@
         font-size: 14px;
     }
     .hero-container {
+        padding-top: 90px;
+        padding-bottom: 50px;
         padding-left: 20px;
         padding-right: 20px;
     }
