@@ -991,7 +991,7 @@
 
     <div class="copyright">
       <div class="container">
-        <div class="row">
+        <div class="row" style="align-items: center;">
           <div class="col-lg-4 col-md-3 col-xs-12">
             <div class="footer-logo" style="display: flex; align-items: center">
               <img
@@ -1015,10 +1015,90 @@
           </div>
           <div class="col-lg-4 col-md-4 col-xs-12">
             <div class="text-center">
-              <p>
+              <p style="margin: 0;">
                 <a href="#" style="color: #fff">LG Community Partners</a> ©
                 <span id="currentYear"></span>
               </p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-5 col-xs-12" style="display:flex; justify-content:flex-end;">
+            <div id="other-services-wrap" style="position: relative; display: inline-block;">
+              <button
+                id="other-services-btn"
+                onclick="toggleOtherServices(event)"
+                style="
+                  background: transparent;
+                  border: 1px solid rgba(255,255,255,0.4);
+                  color: #fff;
+                  padding: 0.3rem 0.85rem;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  font-size: 0.85rem;
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.45rem;
+                  white-space: nowrap;
+                  transition: background 0.2s;
+                "
+                onmouseover="this.style.background='rgba(255,255,255,0.12)'"
+                onmouseout="this.style.background='transparent'"
+              >
+                Other Services
+                <i id="other-services-icon" class="fas fa-chevron-up" style="font-size:0.7rem; transition: transform 0.25s;"></i>
+              </button>
+              <!-- drop-up popup -->
+              <div
+                id="other-services-popup"
+                style="
+                  display: none;
+                  position: absolute;
+                  bottom: calc(100% + 8px);
+                  right: 0;
+                  background: #1a2340;
+                  border: 1px solid rgba(255,255,255,0.15);
+                  border-radius: 6px;
+                  min-width: 210px;
+                  box-shadow: 0 -6px 20px rgba(0,0,0,0.4);
+                  z-index: 9999;
+                  overflow: hidden;
+                "
+              >
+                <a
+                  href="http://plan-wise.lgpartners.com.au/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="
+                    display: block;
+                    padding: 0.65rem 1rem;
+                    color: #cce0ff;
+                    text-decoration: none;
+                    font-size: 0.85rem;
+                    border-bottom: 1px solid rgba(255,255,255,0.1);
+                    transition: background 0.15s;
+                  "
+                  onmouseover="this.style.background='rgba(255,255,255,0.08)'"
+                  onmouseout="this.style.background='transparent'"
+                >
+                  <i class="fas fa-hands-helping" style="margin-right:0.5rem; opacity:0.7;"></i>NDIS Plan Management
+                </a>
+                <a
+                  href="https://freelab.tech"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style="
+                    display: block;
+                    padding: 0.65rem 1rem;
+                    color: #cce0ff;
+                    text-decoration: none;
+                    font-size: 0.85rem;
+                    transition: background 0.15s;
+                  "
+                  onmouseover="this.style.background='rgba(255,255,255,0.08)'"
+                  onmouseout="this.style.background='transparent'"
+                >
+                  <i class="fas fa-laptop-code" style="margin-right:0.5rem; opacity:0.7;"></i>Tech &amp; IT
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -1059,6 +1139,26 @@
           new Date().getFullYear();
       });
     </script>
+    <script>
+      function toggleOtherServices(e) {
+        e.stopPropagation();
+        var popup = document.getElementById("other-services-popup");
+        var icon  = document.getElementById("other-services-icon");
+        var isOpen = popup.style.display === "block";
+        popup.style.display = isOpen ? "none" : "block";
+        icon.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
+      }
+      document.addEventListener("click", function (e) {
+        var wrap = document.getElementById("other-services-wrap");
+        if (wrap && !wrap.contains(e.target)) {
+          var popup = document.getElementById("other-services-popup");
+          var icon  = document.getElementById("other-services-icon");
+          if (popup) popup.style.display = "none";
+          if (icon)  icon.style.transform = "rotate(0deg)";
+        }
+      });
+    </script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         var items = document.querySelectorAll(".hero-exp-item[data-target]");
